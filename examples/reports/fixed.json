@@ -1,0 +1,11 @@
+{
+  "schema_version": 1,
+  "tool": "anchorhold",
+  "scope": "headings",
+  "checked_pages": 1,
+  "checked_anchors": 3,
+  "findings": [],
+  "accepted": [],
+  "unknowns": [],
+  "complete": true
+}

@@ -1,0 +1,9 @@
+{
+  "version": "0.24.2",
+  "release_zip_sha256": "32975d1493ee1a975d6bb41e4fb56fe419cb442ded628bb772ba2e614acfacad",
+  "command": "lychee --offline --include-fragments=anchor-only --no-progress after/html/backlinks.html",
+  "scenario": "Three historical links to id1/id2/id3 in newly generated Sphinx HTML",
+  "exit_code": 0,
+  "anchorhold_retargeted_findings": 3,
+  "interpretation": "Targets exist; their associated release headings shifted."
+}

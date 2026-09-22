@@ -1,0 +1,42 @@
+{
+  "schema_version": 1,
+  "tool": "anchorhold",
+  "scope": "headings",
+  "checked_pages": 1,
+  "checked_anchors": 3,
+  "findings": [
+    {
+      "code": "heading_retargeted",
+      "url": "/index.html#id1",
+      "before": "3.2.0",
+      "after": "3.3.0",
+      "candidates": [
+        "/index.html#id2"
+      ],
+      "fingerprint": "5acb6c968fd5ea5a923dbee1b1ef47236780f4b3ebb1ff045c78f08975729141"
+    },
+    {
+      "code": "heading_retargeted",
+      "url": "/index.html#id2",
+      "before": "3.1.0",
+      "after": "3.2.0",
+      "candidates": [
+        "/index.html#id3"
+      ],
+      "fingerprint": "b787499f457c591e6218439d7eba904975e8acb35cc2c9934823ae33f9aea7a8"
+    },
+    {
+      "code": "heading_retargeted",
+      "url": "/index.html#id3",
+      "before": "3.0.0",
+      "after": "3.1.0",
+      "candidates": [
+        "/index.html#id4"
+      ],
+      "fingerprint": "773b53584f60804bcf92372b210b31a91c0461a574b971eaccc4fce826e574a7"
+    }
+  ],
+  "accepted": [],
+  "unknowns": [],
+  "complete": true
+}

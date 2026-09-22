@@ -1,0 +1,38 @@
+name: test-built-release
+on: [push, pull_request, workflow_dispatch]
+permissions:
+  contents: read
+jobs:
+  test:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest, macos-latest]
+        python: ['3.11', '3.14']
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1 # v6
+        with:
+          python-version: ${{ matrix.python }}
+      - run: python -m pip install build twine
+      # The default build path creates a wheel from the sdist, testing both.
+      - run: python -m build
+      - run: python -m twine check dist/*
+      - name: Install and test the built wheel in a fresh environment
+        shell: python
+        run: |
+          import pathlib, subprocess, tempfile, venv
+          root = pathlib.Path.cwd()
+          wheels = list((root / 'dist').glob('*.whl'))
+          assert len(wheels) == 1, wheels
+          with tempfile.TemporaryDirectory() as directory:
+              env = pathlib.Path(directory) / 'venv'
+              venv.EnvBuilder(with_pip=True).create(env)
+              python = env / ('Scripts/python.exe' if __import__('os').name == 'nt' else 'bin/python')
+              subprocess.run([str(python), '-m', 'pip', 'install', str(wheels[0])], check=True)
+              subprocess.run([str(python), '-W', 'error', '-m', 'unittest', 'discover', '-s', str(root / 'tests'), '-v'], cwd=directory, check=True)
+              subprocess.run([str(python), '-m', 'anchorhold', '--version'], cwd=directory, check=True)

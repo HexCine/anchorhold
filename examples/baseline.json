@@ -1,0 +1,23 @@
+{
+  "schema_version": 1,
+  "tool": "anchorhold",
+  "scope": "headings",
+  "pages": {
+    "index.html": {
+      "anchors": {
+        "id1": {
+          "label": "3.2.0"
+        },
+        "id2": {
+          "label": "3.1.0"
+        },
+        "id3": {
+          "label": "3.0.0"
+        }
+      },
+      "heading_count": 4,
+      "sha256": "8c0eb6a9a3dfdb1ef3d87c490ad2c8c1c3239bece7a31da7196348553f1d4785"
+    }
+  },
+  "unknowns": []
+}
