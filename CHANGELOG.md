@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.1.2 — 2026-09-22
+
+- Add a responsive, offline EN/RU first-run guide with copyable demo commands.
+- Add a Russian quickstart, expected outcomes and troubleshooting links in the README.
+
+
 ## 0.1.1 — 2026-09-22 (first GitHub release)
 
 - Exclude HTML comments from heading labels and preserve word boundaries at br elements.

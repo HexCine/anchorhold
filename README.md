@@ -1,5 +1,10 @@
 # AnchorHold
 
+**[Start here: visual guide EN/RU](https://github.com/HexCine/anchorhold/releases/download/v0.1.2/start.html)** · [Русский: первый запуск](docs/QUICKSTART.ru.md)
+
+Download `start.html` and open it in your browser for installation, a failing demo,
+a passing comparison and next steps. Examples are synthetic and run locally.
+
 [![CI](https://github.com/HexCine/anchorhold/actions/workflows/ci.yml/badge.svg)](https://github.com/HexCine/anchorhold/actions/workflows/ci.yml)
 
 **A link can still resolve and point to the wrong release.** AnchorHold compares
@@ -10,14 +15,14 @@ For example, a generated changelog uses `#id1` for version 1.2.0. After prependi
 1.3.0, `#id1` still exists, but 1.2.0 moved to `#id2`. An existence-only link check
 does not establish that the old link still means the same thing.
 
-Python 3.11+, html5lib, MIT. This is an early 0.1.1 alpha. It works locally
+Python 3.11+, html5lib, MIT. This is an early 0.1.2 alpha. It works locally
 on generated HTML: no account, network requests, site execution or paid API.
 
 ## Download a release
 
-[Release v0.1.1](https://github.com/HexCine/anchorhold/releases/tag/v0.1.1) includes a wheel, source
+[Release v0.1.2](https://github.com/HexCine/anchorhold/releases/tag/v0.1.2) includes a wheel, source
 archives, checksums and a verification record. With Python 3.11+, install the
-downloaded wheel using `python -m pip install anchorhold-0.1.1-py3-none-any.whl`.
+downloaded wheel using `python -m pip install anchorhold-0.1.2-py3-none-any.whl`.
 Runtime dependencies listed below are resolved by pip when needed.
 For source development, clone this repository and follow the existing install steps.
 
@@ -157,4 +162,4 @@ are claimed. Publication is a separate step.
 
 ### Upgrading from 0.1.0
 
-Heading labels now ignore HTML comments and treat `<br>` as a word boundary. If your baseline contains affected headings, rebuild the baseline with 0.1.1 from the **same known-good historical HTML** before comparing the new site. Do not regenerate it from an unreviewed candidate site: doing so would acknowledge its changes. Unaffected snapshots remain compatible.
+Heading labels now ignore HTML comments and treat `<br>` as a word boundary. If your baseline contains affected headings, rebuild the baseline with 0.1.2 from the **same known-good historical HTML** before comparing the new site. Do not regenerate it from an unreviewed candidate site: doing so would acknowledge its changes. Unaffected snapshots remain compatible.
